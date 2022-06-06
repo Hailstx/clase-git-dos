@@ -1,0 +1,122 @@
+/* propiedades del padre*/
+
+.padre{
+    height: 800px;
+    /* declaramos la propiedad*/
+    display: grid;
+    /* trabajamos columnas*/
+    grid-template-columns: repeat(5, 1fr);
+    /* trabajamos filas*/
+    grid-template-rows: repeat(3, 2fr);
+    /*espacio*/
+    gap: 10px 20px;
+}
+
+/* propiedades de los hijos*/
+
+.div-uno{
+    background-color: bisque;
+}
+
+.div-dos{
+    background-color: burlywood;
+}
+
+.div-tres{
+    background-color: tomato;
+}
+
+.div-cuatro{
+    background-color: teal;
+}
+
+/* código del ejemplo */
+
+.ejemplo{
+    background-color: teal;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.imagen-1{
+    justify-self: start;
+    align-self: end;
+}
+
+.imagen-4{
+    justify-self: end;
+    align-self: end;
+}
+
+/* reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PROPIEDADES DE LOS HIJOS*/
+header{
+    background-color: thistle;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    align-content: center;
+}
+
+header nav ul li{
+    margin: 5px;
+    list-style: none;
+}
+
+main{
+    background-color: rgb(182, 149, 182);
+    grid-area: main;
+}
+
+section{
+    background-color: rgb(118, 84, 118);
+    grid-area: section;
+}
+
+.section-dos{
+    background-color: rgb(238, 114, 238);
+    grid-area: section-dos;
+}
+
+.section-tres{
+    background-color: rgb(205, 142, 205);
+    grid-area: section-tres;
+}
+
+aside{
+    background-color: rgb(106, 87, 106);
+    grid-area: aside;
+}
+
+footer{
+    background-color: rgb(247, 220, 247);
+    grid-area: footer;
+}
+
+ /* propiedades del padre en nosotros*/
+ .contenedor{
+     display: grid;
+     height: 100vh;
+     grid-template-columns: 0.5fr 1fr 1fr 1fr;
+     grid-template-rows: 0.3fr 1.5fr 1fr 0.3fr;
+     gap: 10px;
+     grid-template-areas:   "header header header header"
+                            "aside main main main" 
+                            "aside section section-dos section-tres"
+                            "aside footer footer footer";
+ }

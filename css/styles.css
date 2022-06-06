@@ -1,0 +1,277 @@
+.contenedor{
+    height: 100vh; 
+    display: grid;
+    /* columnas*/
+    grid-template-columns: repeat(5, 1fr);
+    /* filas*/
+    grid-template-rows: repeat(3, 2fr);
+    /*espacio*/
+    gap: 10px 20px;
+}
+
+/* propiedades de los hijos*/
+
+
+/* código del body */
+body{
+    background-image: url(../img/cool-background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PROPIEDADES DE LOS HIJOS*/
+header{
+    grid-area: header;
+    display: grid;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: 'Belleza', sans-serif;
+    color: black;
+}
+
+#logo{
+    display: flex;
+    grid-area: logo;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    position: relative; top: -120px; left: -60px;
+    border-radius: 30px;
+}
+
+.headertext{
+    display: grid;
+    grid-area: headertext;
+}
+
+.linkindex{
+    display: flex;
+    grid-area: linkindex;
+    text-align: end;
+    position: relative; top: -130px; left: 130px;
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.listamenu{
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    display: inline;
+    column-count: 4;
+    text-align: center;
+    column-gap: 1px;
+    font-family: 'Belleza', sans-serif;
+}
+
+header nav ul{
+    display: grid;
+    grid-area: elementosmenu;  
+    margin: 13rem;
+    justify-content: space-evenly;
+}
+
+.elementosmenu{
+    text-decoration: none;
+    color: black;
+    grid-area: elementosmenu;
+    list-style: none;
+}
+
+header nav ul li{
+    margin: 50px;
+    list-style: none;
+    font-size: 50px;
+}
+
+.navGrid{
+    grid-area: Menuitems;
+    display: grid;
+}
+
+.main{
+    display: inline;
+    grid-area: main;
+    column-count: 2;
+    column-gap: 3rem;
+    margin-top: 10px;
+}
+
+.section-uno{
+    display: grid;
+    grid-area: sectionuno;
+}
+
+.section-dos{
+    display: grid;
+    grid-area: sectiondos;
+}
+
+.section-tres{
+    display: grid;
+    grid-area: sectiontres;
+}
+
+.section-cuatro{
+    display: grid;
+    grid-area: sectioncuatro;
+}
+
+#imagenesprod{
+    width: 8rem;
+    height: 8rem;
+}
+
+
+footer{
+    background-color: #7c7c7c9c;
+    display: grid;
+    grid-area: footer;
+    justify-content: space-around;
+    grid-template-rows: 2rem;
+    font-size: 0.6rem;
+}
+
+/* propiedades logo en footer*/
+#logoig{
+    display: inline;
+    position: relative; top: -30px; left: 330px;
+    width: 2rem;
+    height: 2rem;
+}
+
+#linkig{
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Radio Canada', sans-serif;
+}
+
+ /* propiedades del padre en index*/
+ .contenedor{
+     display: grid;
+     height: 100vh;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 1.5fr 1fr 0.3fr 1.5fr 1fr 0.3fr;
+     gap: 10px;
+     grid-template-areas:   "header header header"
+                            "elementosmenu elementosmenu elementosmenu"
+                            "elementosmenu elementosmenu elementosmenu"
+                            "elementosmenu elementosmenu elementosmenu"
+                            "elementosmenu elementosmenu elementosmenu"
+                            "footer footer footer";
+ }
+
+ /* propiedades del body en novedades*/
+ .contenedornovedades{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 0.5fr 1fr 1fr 0.3fr;
+    gap: 10px;
+    grid-template-areas:    "logo header header header indexbutton"  
+                            "Menuitems Menuitems Menuitems Menuitems Menuitems"                     
+                            "main main main main ."
+                            ". sectionuno sectiondos . ."
+                            ". sectiontres sectioncuatro . ."
+                            "footer footer footer footer footer";
+}
+
+/* Media Queries */
+@media screen and (min-width:600px) {
+    .contenedornovedades{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.3fr 1fr 2fr 1fr 0.3fr;
+        gap: 10px;
+        grid-template-areas:    "logo header header header indexbutton"  
+                                "aside Menuitems Menuitems Menuitems Menuitems"                     
+                                "aside main main main main"
+                                "aside sectionuno sectiondos sectiontres sectioncuatro"
+                                "footer footer footer footer footer";
+    }
+
+    #logo{
+        display: flex;
+        grid-area: logo;
+        width: 100px;
+        height: 100px;
+        border-radius: 40px;
+        background-repeat: no-repeat;
+        justify-content: flex-start;
+        position: relative; top: -70px; left: -110px;
+        border-radius: 30px;
+    }
+
+    .linkindex{
+        display: flex;
+        grid-area: linkindex;
+        text-align: end;
+        position: relative; top: -130px;
+        margin: 10px;
+        font-size: 30px;
+        text-decoration: none;
+        color: black;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .listamenu{
+        font-size: 30px;
+        text-decoration: none;
+        color: black;
+        list-style: none;
+        display: inline;
+        column-count: 4;
+        text-align: center;
+        column-gap: 1px;
+        font-family: 'Belleza', sans-serif;
+    }
+
+    footer{
+        font-size: 0.65rem;
+    }
+
+    #logoig{
+        position: relative; top: -25px; left: 320px;
+        width: 2rem;
+        height: 2rem;
+    }
+    
+    #linkig{
+        font-size: 0.65rem;
+    }
+    .main{
+        column-count: 4;
+    }
+
+    aside{
+        display: grid;
+        grid-area: aside;  
+        width: 1rem;
+        height: 1rem;
+    }
+    
+    #publicidad{
+        display: block;
+        object-fit: cover;
+   }
+}
+
